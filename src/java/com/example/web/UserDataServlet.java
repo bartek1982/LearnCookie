@@ -42,6 +42,5 @@ public class UserDataServlet extends HttpServlet {
         
         RequestDispatcher view = request.getRequestDispatcher("wynik.jsp");
         view.forward(request, response);
-        //lack
     }
 }

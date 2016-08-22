@@ -1,9 +1,9 @@
+<%@page import="com.example.model.*" %>
 <%-- 
     Document   : wynik
     Created on : 2016-07-12, 20:46:18
     Author     : Bart
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,6 @@
             <%
                 String userName = (String)request.getParameter("userName");
                 String password = (String)request.getParameter("password");
-                
                 out.println("User name: " +userName);
                 out.println("<br/>");
                 out.println("Password: " +password);
@@ -25,15 +24,48 @@
                 out.println("<br/>");
                 
                 Cookie [] cookies = request.getCookies();
-                
+                String userNameFromCookie = "";
+                if(cookies!=null){
                 for(int i = 0; i<cookies.length; i++){
                     Cookie cookie = cookies[i];
                     if(cookie.getName().equals("userName")){
-                        String userNameFromCookie = cookie.getValue();
+                        userNameFromCookie = cookie.getValue();
                         out.println("Hello: " +userNameFromCookie);
                         break;
                     }
                 }
+                }
+                out.println("<br/>");
+                out.println("<br/>");
+                out.println("Wyswietlen: " +Licznik.getLiczba());
             %>
+            
+            <%="<BR/>"%>
+            <%="<BR/>"%>
+            <%="<BR/>"%>
+            <%="*************************************************************************************"%>
+            <%="<BR/>"%>
+            <%="<BR/>"%>
+            <%="<BR/>"%>
+            
+            
+            <%="User name: " +userName%>
+            <%="<BR/>"%>
+            <%="Password: " +password%>
+            <%="<BR/>"%>
+            <%="Hello: " +userNameFromCookie%>
+            <%="<BR/>"%>
+            <%="Wyswietlen: " +Licznik.getLiczba()%>
+            <%="<BR/>"%>
+            <%! int liczba = 0; %>
+            Licznik strony wynosi: 
+            <%= ++liczba%>
+            <%="<BR/>"%>            
+            <%! int podwojnaLiczba(){
+                liczba=liczba*2;
+                return liczba;
+            }%>
+            Podwokony licznik strony wynosi: 
+            <%=podwojnaLiczba()%>
     </body>
 </html>

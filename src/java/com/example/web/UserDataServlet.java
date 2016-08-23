@@ -32,9 +32,11 @@ public class UserDataServlet extends HttpServlet {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         
+        User user = new User(userName, password);
+        request.setAttribute("user", user);
                
-        request.setAttribute("userName", userName);
-        request.setAttribute("password", password);
+//        request.setAttribute("userName", userName);
+//        request.setAttribute("password", password);
         
         Cookie cookie = new Cookie("userName", userName);
         

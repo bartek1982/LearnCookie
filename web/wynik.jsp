@@ -12,13 +12,15 @@
         <title>JSP z danymi</title>
     </head>
     <body>
+                
         <p>
             <%
-                String userName = (String)request.getParameter("userName");
-                String password = (String)request.getParameter("password");
-                out.println("User name: " +userName);
+//                String userName = (String)request.getParameter("userName");
+//                String password = (String)request.getParameter("password");
+                User user = (User)request.getAttribute("user");
+                out.println("User name: " +user.getUserName());
                 out.println("<br/>");
-                out.println("Password: " +password);
+                out.println("Password: " +user.getPassword());
                 out.println("<br/>");
                 out.println("<br/>");
                 out.println("<br/>");
@@ -49,9 +51,9 @@
             <%="<BR/>"%>
             
             
-            <%="User name: " +userName%>
+            User name: <%= user.getUserName()%>
             <%="<BR/>"%>
-            <%="Password: " +password%>
+            Password: <%= user.getPassword()%>
             <%="<BR/>"%>
             <%="Hello: " +userNameFromCookie%>
             <%="<BR/>"%>

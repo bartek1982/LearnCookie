@@ -34,6 +34,9 @@ public class UserDataServlet extends HttpServlet {
         
         User user = new User(userName, password);
         request.setAttribute("user", user);
+        
+        
+        request.setAttribute("userWithiutscriptlet", user);
                
 //        request.setAttribute("userName", userName);
 //        request.setAttribute("password", password);

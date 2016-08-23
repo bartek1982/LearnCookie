@@ -69,5 +69,16 @@
             }%>
             Podwokony licznik strony wynosi: 
             <%=podwojnaLiczba()%>
+            
+            <%="<BR/>"%>
+            <%="<BR/>"%>
+            <%="<BR/>"%>
+            <%="*************************************************************************************"%>
+            <%="<BR/>"%>
+            <%="<BR/>"%>
+            <%="<BR/>"%>
+            <jsp:useBean id="userWithiutscriptlet" class="com.example.model.User" scope="page" />
+            User name: <jsp:getProperty name="userWithiutscriptlet" property="userName"/><br>            
+            Password: <jsp:getProperty name="userWithiutscriptlet" property="password"/>
     </body>
 </html>
